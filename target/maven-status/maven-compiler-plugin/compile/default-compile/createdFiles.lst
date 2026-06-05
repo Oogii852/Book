@@ -1,0 +1,10 @@
+com\library\models\Member.class
+com\library\App.class
+com\library\controllers\MainController.class
+com\library\models\Book.class
+com\library\PrimaryController.class
+module-info.class
+com\library\database\DBConnection.class
+com\library\SecondaryController.class
+com\library\models\BorrowRecord.class
+com\library\models\Rental.class

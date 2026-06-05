@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<TabPane xmlns="http://javafx.com/javafx/8.0.171"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="com.library.controllers.MainController"
+         prefWidth="900" prefHeight="600" tabClosingPolicy="UNAVAILABLE">
+  <tabs>
+    <Tab text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1089;&#1072;&#1085;">
+      <content>
+        <SplitPane dividerPositions="0.35">
+          <items>
+            <VBox spacing="10" style="-fx-padding:15;">
+              <Label text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1073;&#1091;&#1088;&#1090;&#1075;&#1101;&#1083;" style="-fx-font-weight:bold;-fx-font-size:14;"/>
+              <Label text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1085;&#1101;&#1088;:"/>
+              <TextField fx:id="txtBookName" promptText="&#1053;&#1086;&#1084;&#1099;&#1085; &#1085;&#1101;&#1088; &#1086;&#1088;&#1091;&#1091;&#1083;&#1085;&#1072; &#1091;&#1091;"/>
+              <Label text="&#1047;&#1086;&#1093;&#1080;&#1086;&#1083;&#1095;:"/>
+              <TextField fx:id="txtAuthor" promptText="&#1047;&#1086;&#1093;&#1080;&#1086;&#1083;&#1095;&#1080;&#1081;&#1085; &#1085;&#1101;&#1088;"/>
+              <Label text="ISBN:"/>
+              <TextField fx:id="txtIsbn" promptText="ISBN &#1082;&#1086;&#1076;"/>
+              <Label text="&#1058;&#1086;&#1086; &#1096;&#1080;&#1088;&#1093;&#1101;&#1075;:"/>
+              <TextField fx:id="txtQuantity" promptText="&#1058;&#1086;&#1086; &#1096;&#1080;&#1088;&#1093;&#1101;&#1075;"/>
+              <Button fx:id="btnAddBook" text="&#1053;&#1101;&#1084;&#1101;&#1093;" onAction="#onAddBookClick"
+                      maxWidth="Infinity"
+                      style="-fx-background-color:#4CAF50;-fx-text-fill:white;"/>
+              <Button text="&#1059;&#1089;&#1090;&#1075;&#1072;&#1093;" onAction="#onDeleteBook"
+                      maxWidth="Infinity"
+                      style="-fx-background-color:#e74c3c;-fx-text-fill:white;"/>
+            </VBox>
+            <VBox spacing="10" style="-fx-padding:15;">
+              <HBox spacing="10">
+                <Label text="&#1061;&#1072;&#1081;&#1093;:"/>
+                <TextField fx:id="txtBookSearch" promptText="&#1061;&#1072;&#1081;&#1093;..." onKeyReleased="#onSearchBook" HBox.hgrow="ALWAYS"/>
+              </HBox>
+              <TableView fx:id="tableBook" VBox.vgrow="ALWAYS">
+                <columns>
+                  <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                  <TableColumn fx:id="colTitle" text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1085;&#1101;&#1088;" prefWidth="150"/>
+                  <TableColumn fx:id="colAuthor" text="&#1047;&#1086;&#1093;&#1080;&#1086;&#1083;&#1095;" prefWidth="120"/>
+                  <TableColumn fx:id="colIsbn" text="ISBN" prefWidth="100"/>
+                  <TableColumn fx:id="colQuantity" text="&#1058;&#1086;&#1086; &#1096;&#1080;&#1088;&#1093;&#1101;&#1075;" prefWidth="90"/>
+                  <TableColumn fx:id="colAv" text="&#1059;&#1083;&#1076;&#1101;&#1075;&#1076;&#1101;&#1083;" prefWidth="110"/>
+                </columns>
+              </TableView>
+            </VBox>
+          </items>
+        </SplitPane>
+      </content>
+    </Tab>
+    <Tab text="&#1059;&#1085;&#1096;&#1080;&#1075;&#1095;">
+      <content>
+        <VBox style="-fx-padding:20;">
+          <Label text="&#1059;&#1085;&#1096;&#1080;&#1075;&#1095;&#1080;&#1081;&#1085; &#1073;&#1091;&#1088;&#1090;&#1075;&#1101;&#1083; - &#1090;&#1091;&#1085; &#1091;&#1076;&#1072;&#1093;&#1075;&#1091;&#1081;"/>
+        </VBox>
+      </content>
+    </Tab>
+    <Tab text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1090;&#1199;&#1088;&#1101;&#1101;&#1089;">
+      <content>
+        <VBox style="-fx-padding:20;">
+          <Label text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1090;&#1199;&#1088;&#1101;&#1101;&#1089; - &#1090;&#1091;&#1085; &#1091;&#1076;&#1072;&#1093;&#1075;&#1091;&#1081;"/>
+        </VBox>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
