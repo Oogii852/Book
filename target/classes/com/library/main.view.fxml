@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-
-<TabPane prefHeight="500.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE"
-         xmlns="http://javafx.com/javafx/26"
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<TabPane prefHeight="550.0" prefWidth="950.0" tabClosingPolicy="UNAVAILABLE"
+         xmlns="http://javafx.com/javafx/8.0.171"
          xmlns:fx="http://javafx.com/fxml/1"
          fx:controller="com.library.controllers.MainController">
   <tabs>
-
-    <Tab text="Номын сан">
+    <Tab text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1073;&#1199;&#1088;&#1090;&#1075;&#1101;&#1083;">
       <content>
         <AnchorPane>
           <SplitPane dividerPositions="0.3"
@@ -33,18 +19,23 @@
                       AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
                       AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
                   <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
-                  <Label style="-fx-font-weight:bold;-fx-font-size:14;" text="Номын бүртгэл"/>
-                  <Label text="Номын нэр:"/>
-                  <TextField fx:id="txtBookName" promptText="Номын нэр"/>
-                  <Label text="Зохиолч:"/>
-                  <TextField fx:id="txtAuthor" promptText="Зохиолч"/>
+                  <Label style="-fx-font-weight:bold;-fx-font-size:14;" text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1085;&#1101;&#1088;:"/>
+                  <TextField fx:id="txtBookName" promptText="&#1053;&#1086;&#1084;&#1099;&#1085; &#1085;&#1101;&#1088;"/>
+                  <Label text="&#1047;&#1086;&#1093;&#1080;&#1086;&#1083;&#1095;:"/>
+                  <TextField fx:id="txtAuthor" promptText="&#1047;&#1086;&#1093;&#1080;&#1086;&#1083;&#1095;"/>
                   <Label text="ISBN:"/>
                   <TextField fx:id="txtIsbn" promptText="ISBN"/>
-                  <Label text="Тоо ширхэг:"/>
-                  <TextField fx:id="txtQty" promptText="Тоо ширхэг"/>
-                  <Button fx:id="btnAddBook" text="Нэмэх" onAction="#onAddBookClick"
+                  <Label text="&#1058;&#1086;&#1086; &#1096;&#1080;&#1088;&#1093;&#1101;&#1075;:"/>
+                  <TextField fx:id="txtQty" promptText="&#1058;&#1086;&#1086; &#1096;&#1080;&#1088;&#1093;&#1101;&#1075;"/>
+                  <Button fx:id="btnAddBook" text="&#1053;&#1101;&#1084;&#1101;&#1093;" onAction="#onAddBookClick"
                           maxWidth="Infinity"
                           style="-fx-background-color:#4CAF50;-fx-text-fill:white;"/>
+                  <Button text="&#1047;&#1072;&#1089;&#1072;&#1093;" onAction="#onEditBookClick"
+                          maxWidth="Infinity"
+                          style="-fx-background-color:#2196F3;-fx-text-fill:white;"/>
+                  <Button text="&#1059;&#1089;&#1090;&#1075;&#1072;&#1093;" onAction="#onDeleteBookClick"
+                          maxWidth="Infinity"
+                          style="-fx-background-color:#e74c3c;-fx-text-fill:white;"/>
                 </VBox>
               </AnchorPane>
               <AnchorPane>
@@ -53,17 +44,17 @@
                       AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
                   <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
                   <HBox spacing="10">
-                    <Label text="Хайх:"/>
-                    <TextField fx:id="txtBookResearch" promptText="Хайх..." HBox.hgrow="ALWAYS"/>
+                    <Label text="&#1061;&#1072;&#1081;&#1093;:"/>
+                    <TextField fx:id="txtBookResearch" promptText="&#1061;&#1072;&#1081;&#1093;..." HBox.hgrow="ALWAYS"/>
                   </HBox>
                   <TableView fx:id="tableBook" VBox.vgrow="ALWAYS">
                     <columns>
                       <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
-                      <TableColumn fx:id="colTitle" text="Номын нэр" prefWidth="150"/>
-                      <TableColumn fx:id="colAuthor" text="Зохиолч" prefWidth="100"/>
+                      <TableColumn fx:id="colTitle" text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1085;&#1101;&#1088;" prefWidth="150"/>
+                      <TableColumn fx:id="colAuthor" text="&#1047;&#1086;&#1093;&#1080;&#1086;&#1083;&#1095;" prefWidth="100"/>
                       <TableColumn fx:id="colIsbn" text="ISBN" prefWidth="90"/>
-                      <TableColumn fx:id="colQty" text="Тоо ширхэг" prefWidth="90"/>
-                      <TableColumn fx:id="colAv" text="Боломжит үлдэгдэл" prefWidth="130"/>
+                      <TableColumn fx:id="colQty" text="&#1058;&#1086;&#1086; &#1096;&#1080;&#1088;&#1093;&#1101;&#1075;" prefWidth="90"/>
+                      <TableColumn fx:id="colAv" text="&#1198;&#1083;&#1076;&#1101;&#1075;&#1076;&#1101;&#1083;" prefWidth="90"/>
                     </columns>
                   </TableView>
                 </VBox>
@@ -73,8 +64,7 @@
         </AnchorPane>
       </content>
     </Tab>
-
-    <Tab text="Уншигч">
+    <Tab text="&#1059;&#1085;&#1096;&#1080;&#1075;&#1095;&#1080;&#1081;&#1085; &#1073;&#1199;&#1088;&#1090;&#1075;&#1101;&#1083;">
       <content>
         <AnchorPane>
           <SplitPane dividerPositions="0.3"
@@ -86,18 +76,24 @@
                       AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
                       AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
                   <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
-                  <Label style="-fx-font-weight:bold;-fx-font-size:14;" text="Уншигчийн бүртгэл"/>
-                  <Label text="Нэр:"/>
-                  <TextField fx:id="txtMemberName" promptText="Нэр"/>
-                  <Label text="Овог:"/>
-                  <TextField fx:id="txtSurname" promptText="Овог"/>
-                  <Label text="Утас:"/>
-                  <TextField fx:id="txtPhone" promptText="Утас"/>
+                  <Label style="-fx-font-weight:bold;-fx-font-size:14;" text="&#1059;&#1085;&#1096;&#1080;&#1075;&#1095;&#1080;&#1081;&#1085; &#1073;&#1199;&#1088;&#1090;&#1075;&#1101;&#1083;"/>
+                  <Label text="&#1053;&#1101;&#1088;:"/>
+                  <TextField fx:id="txtMemberName" promptText="&#1053;&#1101;&#1088;"/>
+                  <Label text="&#1054;&#1074;&#1086;&#1075;:"/>
+                  <TextField fx:id="txtSurname" promptText="&#1054;&#1074;&#1086;&#1075;"/>
+                  <Label text="&#1059;&#1090;&#1072;&#1089;:"/>
+                  <TextField fx:id="txtPhone" promptText="&#1059;&#1090;&#1072;&#1089;"/>
                   <Label text="Email:"/>
                   <TextField fx:id="txtEmail" promptText="Email"/>
-                  <Button text="Нэмэх" onAction="#onAddMemberClick"
+                  <Button fx:id="btnAddMember" text="&#1053;&#1101;&#1084;&#1101;&#1093;" onAction="#onAddMemberClick"
                           maxWidth="Infinity"
                           style="-fx-background-color:#4CAF50;-fx-text-fill:white;"/>
+                  <Button text="&#1047;&#1072;&#1089;&#1072;&#1093;" onAction="#onEditMemberClick"
+                          maxWidth="Infinity"
+                          style="-fx-background-color:#2196F3;-fx-text-fill:white;"/>
+                  <Button text="&#1059;&#1089;&#1090;&#1075;&#1072;&#1093;" onAction="#onDeleteMemberClick"
+                          maxWidth="Infinity"
+                          style="-fx-background-color:#e74c3c;-fx-text-fill:white;"/>
                 </VBox>
               </AnchorPane>
               <AnchorPane>
@@ -105,16 +101,12 @@
                       AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
                       AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
                   <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
-                  <HBox spacing="10">
-                    <Label text="Хайх:"/>
-                    <TextField fx:id="txtMemberSearch" promptText="Хайх..." HBox.hgrow="ALWAYS"/>
-                  </HBox>
                   <TableView fx:id="tableMember" VBox.vgrow="ALWAYS">
                     <columns>
                       <TableColumn fx:id="colMId" text="ID" prefWidth="50"/>
-                      <TableColumn fx:id="colMemberName" text="Нэр" prefWidth="120"/>
-                      <TableColumn fx:id="colMemberSurname" text="Овог" prefWidth="120"/>
-                      <TableColumn fx:id="colPhone" text="Утас" prefWidth="100"/>
+                      <TableColumn fx:id="colMemberName" text="&#1053;&#1101;&#1088;" prefWidth="120"/>
+                      <TableColumn fx:id="colMemberSurname" text="&#1054;&#1074;&#1086;&#1075;" prefWidth="120"/>
+                      <TableColumn fx:id="colPhone" text="&#1059;&#1090;&#1072;&#1089;" prefWidth="100"/>
                       <TableColumn fx:id="colEmail" text="Email" prefWidth="130"/>
                     </columns>
                   </TableView>
@@ -125,8 +117,7 @@
         </AnchorPane>
       </content>
     </Tab>
-
-    <Tab text="Номын түрээс">
+    <Tab text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1090;&#1199;&#1088;&#1101;&#1101;&#1089;">
       <content>
         <AnchorPane>
           <VBox spacing="15"
@@ -135,28 +126,26 @@
             <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
             <HBox spacing="10" alignment="CENTER_LEFT"
                   style="-fx-border-color:#cccccc;-fx-border-width:1;-fx-border-radius:5;-fx-padding:10;">
-              <Button fx:id="btnRentBook" text="Ном түрээслэх" onAction="#onRentBookClick"/>
-              <Button fx:id="btnReturnBook" text="Ном буцаах" onAction="#onReturnBookClick"/>
-              <fx:define>
-                <ToggleGroup fx:id="filterGroup"/>
-              </fx:define>
-              <RadioButton fx:id="radioAll" text="Бүгд" selected="true" toggleGroup="$filterGroup"/>
-              <RadioButton fx:id="radioOverdue" text="Хугацаа хэтэрсэн" toggleGroup="$filterGroup"/>
+              <Button fx:id="btnRentBook" onAction="#onRentBookClick" text="&#1053;&#1086;&#1084; &#1090;&#1199;&#1088;&#1101;&#1101;&#1089;&#1083;&#1101;&#1093;"/>
+              <Button fx:id="btnReturnBook" onAction="#onReturnBookClick" text="&#1053;&#1086;&#1084; &#1073;&#1091;&#1094;&#1072;&#1072;&#1093;"/>
+              <Button fx:id="btnExtendBook" onAction="#onExtendBookClick" text="&#1057;&#1091;&#1085;&#1075;&#1072;&#1093;"/>
+              <RadioButton fx:id="radioAll" text="&#1041;&#1199;&#1075;&#1076;"/>
+              <RadioButton fx:id="radioOverdue" text="&#1061;&#1091;&#1075;&#1072;&#1094;&#1072;&#1072; &#1093;&#1101;&#1090;&#1101;&#1088;&#1089;&#1101;&#1085;"/>
             </HBox>
             <TableView fx:id="tableRental" VBox.vgrow="ALWAYS">
               <columns>
-                <TableColumn fx:id="colRentalId" text="ID" prefWidth="60"/>
-                <TableColumn fx:id="colRentMemberName" text="Уншигч" prefWidth="150"/>
-                <TableColumn fx:id="colRentBookTitle" text="Номын нэр" prefWidth="200"/>
-                <TableColumn fx:id="colRentDate" text="Түрээслэсэн өдөр" prefWidth="130"/>
-                <TableColumn fx:id="colReturnDate" text="Буцаах өдөр" prefWidth="120"/>
-                <TableColumn fx:id="colRentalStatus" text="Төлөв" prefWidth="120"/>
+                <TableColumn fx:id="colRentalId" text="ID" prefWidth="40"/>
+                <TableColumn fx:id="colRentMemberName" text="&#1059;&#1085;&#1096;&#1080;&#1075;&#1095;" prefWidth="100"/>
+                <TableColumn fx:id="colRentBookTitle" text="&#1053;&#1086;&#1084;&#1099;&#1085; &#1085;&#1101;&#1088;" prefWidth="150"/>
+                <TableColumn fx:id="colRentDate" text="&#1058;&#1199;&#1088;&#1101;&#1101;&#1089;&#1083;&#1101;&#1089;&#1101;&#1085; &#1257;&#1076;&#1257;&#1088;" prefWidth="130"/>
+                <TableColumn fx:id="colReturnDate" text="&#1041;&#1091;&#1094;&#1072;&#1072;&#1093; &#1257;&#1076;&#1257;&#1088;" prefWidth="110"/>
+                <TableColumn fx:id="colReturnedDate" text="&#1041;&#1091;&#1094;&#1072;&#1072;&#1089;&#1072;&#1085; &#1257;&#1076;&#1257;&#1088;" prefWidth="120"/>
+                <TableColumn fx:id="colRentalStatus" text="&#1058;&#1257;&#1083;&#1257;&#1074;" prefWidth="120"/>
               </columns>
             </TableView>
           </VBox>
         </AnchorPane>
       </content>
     </Tab>
-
   </tabs>
 </TabPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.library.controllers.RentDialogController"
+      prefWidth="400" spacing="15" style="-fx-padding:20;">
+  <Label text="&#1064;&#1080;&#1085;&#1101; &#1090;&#1199;&#1088;&#1101;&#1101;&#1089; &#1073;&#1199;&#1088;&#1090;&#1075;&#1101;&#1093;"
+         style="-fx-font-weight:bold;-fx-font-size:14;"/>
+  <GridPane hgap="10" vgap="15">
+    <Label text="&#1059;&#1085;&#1096;&#1080;&#1075;&#1095; &#1089;&#1086;&#1085;&#1075;&#1086;&#1093;:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <ComboBox fx:id="cmbMember" prefWidth="250" promptText="&#1059;&#1085;&#1096;&#1080;&#1075;&#1095; &#1089;&#1086;&#1085;&#1075;&#1086;&#1085;&#1086; &#1091;&#1091;..."
+              GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="&#1053;&#1086;&#1084; &#1089;&#1086;&#1085;&#1075;&#1086;&#1093;:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <ComboBox fx:id="cmbBook" prefWidth="250" promptText="&#1053;&#1086;&#1084; &#1089;&#1086;&#1085;&#1075;&#1086;&#1085;&#1086; &#1091;&#1091;..."
+              GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="&#1041;&#1091;&#1094;&#1072;&#1072;&#1093; &#1257;&#1076;&#1257;&#1088;:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <DatePicker fx:id="dpDueDate" prefWidth="250"
+                GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+  </GridPane>
+  <HBox spacing="10" alignment="CENTER_RIGHT">
+    <Button fx:id="btnCancel" text="&#1062;&#1091;&#1094;&#1083;&#1072;&#1093;" onAction="#onCancelClick"/>
+    <Button fx:id="btnSave" text="&#1061;&#1072;&#1076;&#1075;&#1072;&#1083;&#1072;&#1093;" onAction="#onSaveClick"
+            style="-fx-background-color:#2ecc71;-fx-text-fill:white;"/>
+  </HBox>
+</VBox>
